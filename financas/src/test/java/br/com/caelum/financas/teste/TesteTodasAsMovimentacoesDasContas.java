@@ -36,7 +36,7 @@ public class TesteTodasAsMovimentacoesDasContas {
 		 */
 
 		// Aqui vamos alterar o comportamento para EAGER. Junto a conta as suas movimentações;
-		String jpql1 = "select c from Conta c join fetch c.movimentacoes";
+		String jpql1 = "select distinct c from Conta c left join fetch c.movimentacoes";
 		Query query1 = em.createQuery(jpql1);
 
 		// lista de todas as contas registradas no banco
